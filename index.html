@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Learning</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+
+    <div id="app">
+        <input type="text" v-model="message">
+        <p>Hello {{ message }}</p>
+
+
+    </div>
+
+    <script>
+        Vue.createApp({
+
+            data(){
+                return {
+
+                    message: 'Egide'
+                }
+            }
+
+        }).mount('#app');
+    </script>
+    
+</body>
+</html>
