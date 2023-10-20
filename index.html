@@ -5,12 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Learning</title>
     <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+        }
+
+        .text-red {
+            background-color: red;
+            color: white;
+        }
+        .text-green {
+            background-color: green;
+            color: white;
+        }
+        </style>
 </head>
 <body>
 
     <div id="app">
-        <input type="text" v-model="message">
-        <p>Hello {{ message }}</p>
+        <button :class="active ? 'text-red' : 'text-green'" v-on:click="toggle">Click me</button>
 
 
     </div>
@@ -21,7 +39,13 @@
             data(){
                 return {
 
-                    message: 'Egide'
+                   active: false
+                }
+            },
+
+            methods: {
+                toggle() {
+                    this.active = ! this.active;
                 }
             }
 
